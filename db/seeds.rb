@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+Cocktail.delete_all
+
+puts "number of #{Cocktail.count} should be zero"
+
+cocktail_mojito = Cocktail.create(name: "Mojito")
+cocktail_cuba = Cocktail.create(name: "Cuba libre")
+
+
+
+puts "number of #{Cocktail.count} should be > zero"
