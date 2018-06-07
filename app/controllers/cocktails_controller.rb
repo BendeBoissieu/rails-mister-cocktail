@@ -16,6 +16,8 @@ class CocktailsController < ApplicationController
       render "new"
     end
   end
+  def destroy
+  end
 
     private
 
