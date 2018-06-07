@@ -8,12 +8,25 @@
 
 
 Cocktail.delete_all
+Ingredient.delete_all
+Dose.delete_all
 
 puts "number of #{Cocktail.count} should be zero"
 
 cocktail_mojito = Cocktail.create(name: "Mojito")
 cocktail_cuba = Cocktail.create(name: "Cuba libre")
+cocktail_cubaL = Cocktail.create(name: "Cuba libro")
 
 
+Ingredient.create(name: "lemon")
+Ingredient.create(name: "ice")
+Ingredient.create(name: "mint leaves")
+
+Cocktail.all.each do |cocktail|
+  Ingredient.all.each do |ingredient|
+    Dose.create(description: "1/3", cocktail_id: cocktail.id, ingredient_id: ingredient.id)
+  end
+
+ end
 
 puts "number of #{Cocktail.count} should be > zero"
