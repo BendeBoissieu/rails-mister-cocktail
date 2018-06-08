@@ -31,48 +31,57 @@
         </tbody>
       </table>
 
-      <table class="table table-bordered">
-        <thead>
-            <%= simple_form_for [@cocktail, @dose] do |f| %>
-
-            <td><%= f.association :ingredient %></td>
-            <td><%= f.input :description %></td>
-
-            <th> <%= f.button :submit, class: 'btn btn-success' %>
-      <% end %>
-          </th>
-         </thead>
-
-
-      </table>
-
     </div>
 
   </div>
-  <h4><%= link_to " Back to all cocktails ", root_path, class: 'glyphicon glyphicon-hand-right'%></h4>
 </div>
 
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Launch demo modal
-</button>
 
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+    Add a new dose?
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Add a new ingredient</h4>
+        </div>
+        <div class="modal-body">
+          <!-- New dose table -->
+          <table class="table table-bordered">
+
+                <%= simple_form_for [@cocktail, @dose] do |f| %>
+                  <dt><p>Select an ingredient in the list:</p></dt>
+                  <dt><%= f.association :ingredient %></dt>
+                  <dt><p></p></dt>
+                  <dt><p>Give the proportion of the ingredient </p></dt>
+                  <dt><%= f.input :description %></dt>
+
+
+          </table>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <th> <%= f.button :submit, class: 'btn btn-success' %>
+                <% end %>
+              </th>
+        </div>
       </div>
     </div>
   </div>
-</div>
+
+
+   <h4><%= link_to " Back to all cocktails ", root_path, class: 'glyphicon glyphicon-hand-right'%></h4>
+
+
+
+
+
+
