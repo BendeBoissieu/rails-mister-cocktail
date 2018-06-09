@@ -20,3 +20,6 @@
 
 
 console.log("Hello from app/javascript/packs/application.js!");
+$('#myModal').on('hidden.bs.modal', function () {
+  window.alert('hidden event fired!');
+});

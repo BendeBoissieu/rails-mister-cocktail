@@ -14,17 +14,19 @@ class CocktailsController < ApplicationController
     @ingredient=Ingredient.all
 
     @dose.cocktail = @cocktail
+
   end
 
   def new
     @cocktail = Cocktail.new
+
 
   end
 
   def create
     @cocktail = Cocktail.new(cocktail_params)
     if @cocktail.save
-      redirect_to cocktail_path(@cocktail)
+      redirect_to edit_cocktail_path(@cocktail)
     else
       render "new"
     end
