@@ -19,14 +19,8 @@
             <tr>
               <td><%= dose.ingredient.name %></td>
               <td><%= dose.description %></td>
-
-              <td>
-                <%= link_to "delete this ingredient", cocktail_dose_path(@cocktail, dose), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-primary'%>
-              </td>
-
             </tr>
           <% end %>
-
     </div>
         </tbody>
       </table>
@@ -39,46 +33,13 @@
 
 
 
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-    Add a new dose?
-  </button>
-
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">Add a new ingredient</h4>
-        </div>
-        <div class="modal-body">
-          <!-- New dose table -->
-          <table class="table table-bordered">
-
-                <%= simple_form_for [@cocktail, @dose] do |f| %>
-                  <dt><p>Select an ingredient in the list:</p></dt>
-                  <dt><%= f.association :ingredient %></dt>
-                  <dt><p></p></dt>
-                  <dt><p>Give the proportion of the ingredient </p></dt>
-                  <dt><%= f.input :description %></dt>
 
 
-          </table>
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <th> <%= f.button :submit, class: 'btn btn-success' %>
-                <% end %>
-              </th>
-        </div>
-      </div>
-    </div>
-  </div>
 
 
+    <h4><%= link_to " Edit a cocktail ", edit_cocktail_path, class: 'glyphicon glyphicon-hand-right'%></h4>
    <h4><%= link_to " Back to all cocktails ", root_path, class: 'glyphicon glyphicon-hand-right'%></h4>
+
 
 
 

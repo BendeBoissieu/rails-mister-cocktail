@@ -5,10 +5,11 @@ Rails.application.routes.draw do
   # To show the index on the first page
   root to: 'cocktails#index'
 
-  resources :cocktails, only: [:index, :show, :update, :new, :create, :destroy] do
+  resources :cocktails, only: [:index, :show, :edit, :new, :create, :destroy] do
     resources :doses, only: [:destroy, :create]
   end
   resources :ingredients, only: [:create]
+
 
 end
 
