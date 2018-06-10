@@ -71,3 +71,6 @@ end
 
 # Gemfile
 gem 'figaro'
+
+gem 'cloudinary'
+gem 'carrierwave', '~> 1.2'

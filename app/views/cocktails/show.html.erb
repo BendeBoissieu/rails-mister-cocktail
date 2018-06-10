@@ -32,14 +32,25 @@
 </div>
 
 
+<%= cl_image_tag(@cocktail.name,
+      width: 200, height: 150, crop: :pad) %>
 
-
-
-
-
+<!-- Does not work:
+div class="card"
+  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('%= cl_image_path @cocktail.photo, height: 300, width: 400, crop: :fill %')"
+-->
+<!-- Does not work:
+%= image_tag @cocktail.photo.url(:bright_face) %
+-->
 
     <h4><%= link_to " Edit a cocktail ", edit_cocktail_path, class: 'glyphicon glyphicon-hand-right'%></h4>
    <h4><%= link_to " Back to all cocktails ", root_path, class: 'glyphicon glyphicon-hand-right'%></h4>
+
+
+
+
+
 
 
 
